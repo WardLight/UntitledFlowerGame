@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4eaa6e5ab96084f8f4c6079aaa6374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionRange: {fileID: 0}
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -166,6 +167,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  playerInventory: {fileID: 0}
 --- !u!1 &7370561005724653968
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +195,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6999826, y: 5.6999826, z: 5.6999826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 595395396402783920}
@@ -208,7 +210,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -217,5 +219,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}

@@ -1,5 +1,6 @@
 // This first example shows how to move using Input System Package (New)
 
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,18 +13,19 @@ public class PlayerScript : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer = false;
-    private SphereCollider detectionRange;
+    [SerializeField] private SphereCollider detectionRange;
 
     [Header("Input Actions")]
     public InputAction moveAction; // expects Vector2
     public InputAction collectAction; // expects   
 
+    [SerializeField] PlayerInventory playerInventory;
+    
     private void Start() 
     {
         moveAction = InputSystem.actions.FindAction("Move");
         collectAction = InputSystem.actions.FindAction("Interact");
         controller = GetComponent<CharacterController>();
-        detectionRange = GetComponent<SphereCollider>();
     }
     
     private void OnEnable()
@@ -44,7 +46,7 @@ public class PlayerScript : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        if (collectAction.WasCompletedThisFrame())
+        if (collectAction.WasPressedThisFrame())
         {
             Collect();
         }
@@ -69,6 +71,16 @@ public class PlayerScript : MonoBehaviour
 
     private void Collect()
     {
-        Physics.OverlapSphere(detectionRange.center, detectionRange.radius);
+        foreach (Collider collider in Physics.OverlapSphere(transform.position + detectionRange.center, detectionRange.radius))
+        {
+            if (collider.CompareTag("Collectible"))
+            {
+                CollectibleScript collectible = collider.gameObject.GetComponent<CollectibleScript>();
+
+                playerInventory.AddCollectible(collectible.getCollectibleType());
+
+                collectible.OnCollect();
+            }
+        }
     }
 }

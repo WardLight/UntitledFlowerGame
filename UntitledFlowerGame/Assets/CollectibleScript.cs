@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CollectibleScript : MonoBehaviour
 {
-    [SerializeField] PlayerScript player;
+    [FormerlySerializedAs("flowerType")] [SerializeField] CollectibleType collectibleType;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,13 @@ public class CollectibleScript : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnCollect()
     {
+        Destroy(gameObject);
+    }
+    
+    public CollectibleType getCollectibleType()
+    {
+        return collectibleType;
     }
 }
