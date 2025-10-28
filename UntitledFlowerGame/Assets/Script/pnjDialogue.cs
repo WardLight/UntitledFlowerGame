@@ -29,7 +29,7 @@ public class pnjDialogue : MonoBehaviour
     private void Start()
     {
         dialogueBubble.transform.rotation = Camera.main.transform.rotation;
-
+        
         if (isLinked)
         {
             if (isFirst)
@@ -39,6 +39,7 @@ public class pnjDialogue : MonoBehaviour
         }
         else
         {
+
             dialogueMesh.text = dialogues[currentDialogueIndex];
         }
     }
@@ -89,6 +90,7 @@ public class pnjDialogue : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > timePerDialogue)
             {
+                StartCoroutine(HideBubble());
                 timer = 0;
                 if (currentDialogueIndex < dialogues.Count - 1)
                 {
@@ -98,10 +100,33 @@ public class pnjDialogue : MonoBehaviour
                 {
                     currentDialogueIndex = 0;
                 }
-
                 dialogueMesh.text = dialogues[currentDialogueIndex];
             }
         }
     }
 
+    IEnumerator ShowBubble()
+    {
+        float timerTransition = 0f;
+        while (timerTransition < 0.3f)
+        {
+            dialogueBubble.transform.localScale = new Vector3(timerTransition, timerTransition, timerTransition);
+
+            timerTransition += Time.deltaTime;
+            yield return null;
+        }
+    }
+    IEnumerator HideBubble()
+    {
+        float timerTransition = 0.3f;
+        while (timerTransition > 0f)
+        {
+            dialogueBubble.transform.localScale = new Vector3(timerTransition, timerTransition, timerTransition);
+
+            timerTransition -= Time.deltaTime;
+            yield return null;
+        }
+        print("show");
+        StartCoroutine(ShowBubble());
+    }
 }
