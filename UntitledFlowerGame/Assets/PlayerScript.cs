@@ -12,16 +12,20 @@ public class PlayerScript : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer = false;
+    private SphereCollider detectionRange;
 
     [Header("Input Actions")]
     public InputAction moveAction; // expects Vector2
+    public InputAction collectAction; // expects   
 
     private void Start() 
     {
         moveAction = InputSystem.actions.FindAction("Move");
+        collectAction = InputSystem.actions.FindAction("Interact");
         controller = GetComponent<CharacterController>();
+        detectionRange = GetComponent<SphereCollider>();
     }
-
+    
     private void OnEnable()
     {
         moveAction.Enable();
@@ -40,6 +44,11 @@ public class PlayerScript : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
+        if (collectAction.WasCompletedThisFrame())
+        {
+            Collect();
+        }
+
         // Read input
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
@@ -56,5 +65,10 @@ public class PlayerScript : MonoBehaviour
         // Combine horizontal and vertical movement
         Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
         controller.Move(finalMove * Time.deltaTime);
+    }
+
+    private void Collect()
+    {
+        Physics.OverlapSphere(detectionRange.center, detectionRange.radius);
     }
 }
