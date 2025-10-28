@@ -38,10 +38,19 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _Alpha: 3.43
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _Depth: 1
-    - _DepthFallOff: 1
+    - _DepthFallOff: 4.55
+    - _FoamDepth: 1.63
+    - _FoamFalloff: 2.7
+    - _FoamScale: 1
+    - _FoamSpeed: 1
+    - _FoamTiling: 12.29
     m_Colors:
+    - _FoamSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _FoamTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _ShoreColor: {r: 1, g: 1, b: 1, a: 1}
     - _WaterColor: {r: 0.14925236, g: 0.69307804, b: 0.735849, a: 1}
   m_BuildTextureStacks: []
