@@ -14,6 +14,8 @@ public class SelfDialogue : MonoBehaviour
     private float timePerDialogue = 2f;
     [SerializeField]
     private List<string> dialogues;
+    [SerializeField]
+    private bool isCop;
 
     private int currentDialogueIndex = 0;
     private float timer = 0f;
@@ -22,6 +24,7 @@ public class SelfDialogue : MonoBehaviour
     private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
 
     private bool isDisable = false;
+    
 
     private void Start()
     {
@@ -47,6 +50,10 @@ public class SelfDialogue : MonoBehaviour
                     isTransitioning = false;
                 });
             }
+        if (isCop)
+        {
+            isCop = false;
+        }
     }
 
     public void ShowBubble()
