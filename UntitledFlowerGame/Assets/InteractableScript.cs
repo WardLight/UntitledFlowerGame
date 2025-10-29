@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableScript : MonoBehaviour
 {
-    
+    [SerializeField] AudioSource flowerSuccessAudio;
     [SerializeField] CollectibleType collectibleTarget;
     
     // Start is called before the first frame update
@@ -16,6 +16,8 @@ public class InteractableScript : MonoBehaviour
     public void OnQuestComplete()
     {
         Debug.Log("Quest Success");
+        if (flowerSuccessAudio != null)
+            flowerSuccessAudio.Play();
     }
     
     public void OnQuestFailed()
