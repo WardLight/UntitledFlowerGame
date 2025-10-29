@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_S_Water
-  m_Shader: {fileID: -6465566751694194690, guid: a8f808f71ddfe2c4b8393c37b095b804, type: 3}
+  m_Name: Shader Graphs_Test
+  m_Shader: {fileID: -6465566751694194690, guid: 0a33640127f0a4f44ade90b57166aa11, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,16 +37,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AbsorptionCoefficient: 0.205
-    - _Depth: 0
-    - _Depyh: 1.26
+    - _Depth: 1
+    - _DepthFalloff: 0.5
+    - _FoamAmount: -0.02
+    - _FoamDepth: 7.6
+    - _FoamFalloff: 3.67
+    - _FoamShoreWidth: 0.76
+    - _FoamTiling: 20
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _AbsorptionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WaterColor: {r: 0.8066038, g: 0.9962885, b: 1, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
+    - _FoamSpeed: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - _MainColor: {r: 0.0141509175, g: 0.91668886, b: 1, a: 0}
+    - _ShoreColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &296425598246623035
+--- !u!114 &647234916220653315
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
