@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public enum CollectibleType
@@ -13,17 +14,20 @@ public enum CollectibleType
 
 public class PlayerInventory : MonoBehaviour
 {
-    private List<CollectibleType> Inventory  = new List<CollectibleType>();
+    private bool[] Inventory = new []{false, false, false};
+    
+    [SerializeField] List<GameObject> Items;
     
     // Start is called before the first frame update
-    public void AddCollectible(CollectibleType Type)
+    public void AddCollectible(CollectibleType type)
     {
-        Inventory.Append(Type);
-        
+        Inventory[(int)type] = true;
+        Items[(int)type].SetActive(true);
     }
 
-    public void RemoveCollectible(CollectibleType Type)
+    public void RemoveCollectible(CollectibleType type)
     {
-        Inventory.Remove(Type);
+        Inventory[(int)type] = false;
+        Items[(int)type].SetActive(false);
     }
 }

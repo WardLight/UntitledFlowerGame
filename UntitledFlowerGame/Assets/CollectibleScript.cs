@@ -5,19 +5,7 @@ using UnityEngine.Serialization;
 
 public class CollectibleScript : MonoBehaviour
 {
-    [FormerlySerializedAs("flowerType")] [SerializeField] CollectibleType collectibleType;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] CollectibleType collectibleType;
 
     public void OnCollect()
     {
