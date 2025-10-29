@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flower
   - Collectible
+  - Movable
   layers:
   - Default
   - TransparentFX
