@@ -191,6 +191,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8442087788013840462, guid: 26cf5438bef1c534cb070e81956d9674, type: 3}
     - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: collectibleTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
       propertyPath: selfDialogueScript
       value: 
       objectReference: {fileID: 351460135}
