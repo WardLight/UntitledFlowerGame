@@ -23,7 +23,7 @@ public class LinkedDialogue : MonoBehaviour
 
     private bool isFirstCharaTurn = false;
 
-    private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
+    private Vector3 targetScale = new Vector3(0.8f, 0.8f, 0.8f);
 
     public bool isDisable = false;
 

@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody rb;
     [SerializeField]
     private PlayerInventory playerInventory;
+    [SerializeField]
+    private Camera camera;
 
     private void Start()
     {
@@ -45,10 +47,10 @@ public class PlayerScript : MonoBehaviour
         }
 
         Vector2 input = moveAction.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
+        Vector3 move = new Vector3(-input.x, 0, -input.y);
         move = Vector3.ClampMagnitude(move, 1f);
 
-        rb.velocity = new Vector3(move.x * playerSpeed, gravityValue * Time.deltaTime * rb.velocity.y, move.z * playerSpeed);
+        rb.velocity = new Vector3(move.x * playerSpeed,rb.velocity.y, move.z * playerSpeed);
 
         if (particles.isPlaying)
         {
@@ -70,11 +72,11 @@ public class PlayerScript : MonoBehaviour
 
     private void RotateTowardsMouse()
     {
-        if (Camera.main == null || Mouse.current == null)
+        if (camera == null || Mouse.current == null)
             return;
 
         Vector2 mousePosition = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+        Ray ray = camera.ScreenPointToRay(mousePosition);
 
         Plane groundPlane = new Plane(Vector3.up, transform.position);
 
@@ -87,10 +89,15 @@ public class PlayerScript : MonoBehaviour
             if (lookDirection.sqrMagnitude > 0.001f)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+
+                Quaternion offset = Quaternion.Euler(0, 90f, 0);
+                targetRotation *= offset;
+
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
             }
         }
     }
+
 
 
     private void Collect()

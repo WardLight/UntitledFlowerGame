@@ -21,7 +21,7 @@ public class SelfDialogue : MonoBehaviour
     private float timer = 0f;
     private bool isTransitioning = false;
 
-    private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
+    private Vector3 targetScale = new Vector3(0.8f, 0.8f, 0.8f);
 
     private bool isDisable = false;
     
