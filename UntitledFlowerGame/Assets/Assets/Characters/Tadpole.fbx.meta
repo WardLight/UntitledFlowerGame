@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: a53eef725329a534689e9486c64fa0f2
+guid: d217cf997e86cf4408de7e21c832fcfa
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Faces
+    second: {fileID: 2100000, guid: d57e6e01e597aea4ca14ab86292e2bd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: couleur
+    second: {fileID: 2100000, guid: f431ae3da9fcea24f8dd9f282b755e67, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,9 +43,38 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Lion|ArmatureAction
-      takeName: Lion|ArmatureAction
-      internalID: 1054535853653030108
+      name: Lapin.002|ArmatureAction
+      takeName: Lapin.002|ArmatureAction
+      internalID: -4986292908023319543
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lapin.002|ArmatureAction.001
+      takeName: Lapin.002|ArmatureAction.001
+      internalID: 1448960513040279083
       firstFrame: 0
       lastFrame: 14
       wrapMode: 0
@@ -62,9 +101,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Lion|ArmatureAction.001
-      takeName: Lion|ArmatureAction.001
-      internalID: 1375439703395832169
+      name: Lapin.002|ArmatureAction.002
+      takeName: Lapin.002|ArmatureAction.002
+      internalID: -991070052981316531
       firstFrame: 0
       lastFrame: 14
       wrapMode: 0
@@ -91,9 +130,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Lion|ArmatureAction.002
-      takeName: Lion|ArmatureAction.002
-      internalID: -1638056055445101663
+      name: Lapin.002|ArmatureAction.003
+      takeName: Lapin.002|ArmatureAction.003
+      internalID: 9200505193026116093
       firstFrame: 0
       lastFrame: 14
       wrapMode: 0
@@ -120,9 +159,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Lion|ArmatureAction.003
-      takeName: Lion|ArmatureAction.003
-      internalID: -6978146273418359323
+      name: Lapin.002|ArmatureAction.004
+      takeName: Lapin.002|ArmatureAction.004
+      internalID: -1366081946182536970
       firstFrame: 0
       lastFrame: 14
       wrapMode: 0
@@ -149,9 +188,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Lion|ArmatureAction.004
-      takeName: Lion|ArmatureAction.004
-      internalID: -8849057809048850500
+      name: Lapin.002|ArmatureAction.005
+      takeName: Lapin.002|ArmatureAction.005
+      internalID: -7616471947633059895
       firstFrame: 0
       lastFrame: 14
       wrapMode: 0
@@ -178,9 +217,67 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Lion|MArche
-      takeName: Lion|MArche
-      internalID: -7827347771157029373
+      name: Lapin.002|ArmatureAction.006
+      takeName: Lapin.002|ArmatureAction.006
+      internalID: 4808390520283725059
+      firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lapin.002|Idle
+      takeName: Lapin.002|Idle
+      internalID: 3940956301255102670
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lapin.002|MArche
+      takeName: Lapin.002|MArche
+      internalID: -7596662092744471698
       firstFrame: 0
       lastFrame: 14
       wrapMode: 0
@@ -207,9 +304,38 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Lion|Telephone
-      takeName: Lion|Telephone
-      internalID: -5115313376271206227
+      name: Lapin.002|Police
+      takeName: Lapin.002|Police
+      internalID: 475425021951725591
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lapin.002|tADPOLE
+      takeName: Lapin.002|tADPOLE
+      internalID: 8633124344674166815
       firstFrame: 0
       lastFrame: 48
       wrapMode: 0
@@ -220,6 +346,93 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lapin.002|Talk
+      takeName: Lapin.002|Talk
+      internalID: 8164677565612504431
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lapin.002|Talk_dauphin
+      takeName: Lapin.002|Talk_dauphin
+      internalID: 216270528441823954
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lapin.002|Telephone
+      takeName: Lapin.002|Telephone
+      internalID: 7484056940992151582
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
