@@ -4,53 +4,39 @@ using UnityEngine;
 
 public class grab : MonoBehaviour
 {
-    public bool hold;
-    public KeyCode grabKey; 
-    public bool canGrab;
+    public KeyCode grabKey;
 
-
-    /*
+    private bool hold;
+    private bool holding = false;
     void Update()
     {
         
-        if (canGrab)
+
+        if (Input.GetKey(grabKey))
         {
-            if (Input.GetKey(grabKey))
-            {
-                hold = true;
-                transform.position = new Vector3(transform.position.x + (1f * Time.deltaTime), transform.position.y, transform.position.z);
-            }
-            else
-            {
-                hold = false;
-                Destroy(GetComponent<FixedJoint>());
-            }
+            hold = true;
         }
-    }
-    */
-    void Update()
-    {
-        if (!hold)
+        else
         {
+            hold = false;
+            holding = false;
             Destroy(GetComponent<FixedJoint>());
         }
+        
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerStay(Collider other)
     {
-        print("hey");
-        if (hold && col.transform.tag != "Player")
+        if (other.tag == "Movable")
         {
-            Rigidbody rb = col.transform.GetComponent<Rigidbody>();
-            if (rb != null)
+            if (hold && !holding)
             {
+                holding = true;
+                Rigidbody rb = other.transform.GetComponent<Rigidbody>();
                 FixedJoint fj = transform.gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
                 fj.connectedBody = rb;
             }
-            else
-            {
-                FixedJoint fj = transform.gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
-            }
         }
+
     }
 }

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 
-public class LinkedDialogue : MonoBehaviour
+public class SelfDialogue : MonoBehaviour
 {
     [SerializeField]
     private GameObject dialogueBubble;
@@ -14,13 +14,10 @@ public class LinkedDialogue : MonoBehaviour
     private float timePerDialogue = 2f;
     [SerializeField]
     private List<string> dialogues;
-    [SerializeField]
-    private LinkedDialogueInfo otherDialogue;
 
     private int currentDialogueIndex = 0;
     private float timer = 0f;
-
-    private bool isFirstCharaTurn = false;
+    private bool isTransitioning = false;
 
     private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
 
@@ -33,24 +30,19 @@ public class LinkedDialogue : MonoBehaviour
 
     private void Update()
     {
+        if (isTransitioning) return;
 
         timer += Time.deltaTime;
 
         if (timer >= timePerDialogue)
         {
-            if (isFirstCharaTurn)
+            isTransitioning = true;
+            HideBubble(() =>
             {
                 ShowBubble();
-                otherDialogue.HideBubble();
-            }
-            else
-            {
-                otherDialogue.ShowBubble();
-                HideBubble();
-            }
-            timer = 0f;
-            isFirstCharaTurn = !isFirstCharaTurn;
-
+                timer = 0f;
+                isTransitioning = false;
+            });
         }
     }
 
@@ -61,8 +53,11 @@ public class LinkedDialogue : MonoBehaviour
         currentDialogueIndex = (currentDialogueIndex + 1) % dialogues.Count;
     }
 
-    public void HideBubble()
+    public void HideBubble(System.Action onComplete)
     {
-        dialogueBubble.transform.DOScale(Vector3.zero, 0.3f);
+        dialogueBubble.transform.DOScale(Vector3.zero, 0.3f).OnComplete(() =>
+        {
+            onComplete?.Invoke();
+        });
     }
 }
