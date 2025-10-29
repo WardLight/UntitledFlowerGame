@@ -7,6 +7,7 @@ public class grab : MonoBehaviour
     public KeyCode grabKey;
 
     private bool hold;
+    private bool holding = false;
     void Update()
     {
         
@@ -18,18 +19,24 @@ public class grab : MonoBehaviour
         else
         {
             hold = false;
+            holding = false;
             Destroy(GetComponent<FixedJoint>());
         }
         
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerStay(Collider other)
     {
-        if (hold)
+        if (other.tag == "Movable")
         {
-            Rigidbody rb = col.transform.GetComponent<Rigidbody>();
-            FixedJoint fj = transform.gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
-            fj.connectedBody = rb;
+            if (hold && !holding)
+            {
+                holding = true;
+                Rigidbody rb = other.transform.GetComponent<Rigidbody>();
+                FixedJoint fj = transform.gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
+                fj.connectedBody = rb;
+            }
         }
+
     }
 }
