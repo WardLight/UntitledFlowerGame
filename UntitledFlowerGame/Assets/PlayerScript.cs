@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     private float gravityValue = -9.81f;
 
     [SerializeField] private SphereCollider detectionRange;
-    
+    [SerializeField] private ParticleSystem particles;
 
     [Header("Input Actions")]
     public InputAction moveAction;
@@ -50,6 +50,21 @@ public class PlayerScript : MonoBehaviour
 
         rb.velocity = new Vector3(move.x * playerSpeed, gravityValue * Time.deltaTime * rb.velocity.y, move.z * playerSpeed);
 
+        if (particles.isPlaying)
+        {
+            if (rb.velocity.magnitude < 0.1f)
+            {
+                particles.Stop();
+            }
+        }
+        else
+        {
+            if (rb.velocity.magnitude > 0.1f)
+            {
+                particles.Play();
+            }
+        }
+        
         RotateTowardsMouse();
     }
 
