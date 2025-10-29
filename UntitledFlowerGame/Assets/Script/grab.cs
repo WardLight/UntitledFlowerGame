@@ -6,6 +6,7 @@ public class grab : MonoBehaviour
 {
     public KeyCode grabKey;
     [SerializeField] AudioSource grabSound;
+    [SerializeField] GameObject grabAnchor;
 
     private bool hold;
     private bool holding = false;
@@ -19,8 +20,11 @@ public class grab : MonoBehaviour
         else
         {
             hold = false;
-            holding = false;
-            Destroy(GetComponent<FixedJoint>());
+            if (holding)
+            {
+                holding = false;
+                Destroy(GetComponent<FixedJoint>());
+            }
         }
         
     }
@@ -35,7 +39,9 @@ public class grab : MonoBehaviour
                 if (grabSound != null)
                     grabSound.Play();
                 Rigidbody rb = other.transform.GetComponent<Rigidbody>();
+                other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y + 0.3f, other.transform.position.z);
                 FixedJoint fj = transform.gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
+                
                 fj.connectedBody = rb;
             }
         }

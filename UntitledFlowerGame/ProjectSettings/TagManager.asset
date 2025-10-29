@@ -8,6 +8,7 @@ TagManager:
   - Collectible
   - Movable
   - Interactable
+  - fish
   layers:
   - Default
   - TransparentFX

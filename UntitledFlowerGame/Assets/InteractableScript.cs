@@ -7,8 +7,8 @@ public class InteractableScript : MonoBehaviour
     [SerializeField] AudioSource flowerSuccessAudio;
     [SerializeField] CollectibleType collectibleTarget;
     
-    [SerializeField] GameObject loveEffect;
-    [SerializeField] GameObject badEffect;
+    [SerializeField] ParticleSystem loveEffect;
+    [SerializeField] ParticleSystem badEffect;
 
     [SerializeField] SelfDialogue selfDialogueScript;
     [SerializeField] LinkedDialogue linkedDialogueScript;
@@ -21,7 +21,7 @@ public class InteractableScript : MonoBehaviour
 
     public void OnQuestComplete()
     {
-        GameObject effect = Instantiate(loveEffect, transform.position + Vector3.up, Quaternion.identity, transform);
+        loveEffect.Play();
         if (selfDialogueScript != null)
         {
             selfDialogueScript.HideComplitelyBubble();
@@ -40,6 +40,6 @@ public class InteractableScript : MonoBehaviour
     
     public void OnQuestFailed()
     {
-        Debug.Log("Quest failed");
+        badEffect.Play();
     }
 }
