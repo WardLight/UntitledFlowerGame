@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ee3b053bba70ec148ad9185fd3da7406
+  - enabled: 1
+    path: Assets/Scenes/victoruGrabScene.unity
+    guid: d3d2726bbcc822841b2eccafcadc9200
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: fe1eb95dbef68a94fa617d5deb8b22ae, type: 3}
