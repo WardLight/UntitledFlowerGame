@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class LinkedDialogue : MonoBehaviour
 {
     [SerializeField]
-    private GameObject dialogueBubble;
+    public GameObject dialogueBubble;
     [SerializeField]
     private TextMeshPro dialogueMesh;
     [SerializeField]
@@ -24,6 +25,8 @@ public class LinkedDialogue : MonoBehaviour
 
     private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
 
+    public bool isDisable = false;
+
     private void Start()
     {
         dialogueBubble.transform.localScale = Vector3.zero;
@@ -33,24 +36,26 @@ public class LinkedDialogue : MonoBehaviour
 
     private void Update()
     {
-
-        timer += Time.deltaTime;
-
-        if (timer >= timePerDialogue)
+        if (!isDisable)
         {
-            if (isFirstCharaTurn)
-            {
-                ShowBubble();
-                otherDialogue.HideBubble();
-            }
-            else
-            {
-                otherDialogue.ShowBubble();
-                HideBubble();
-            }
-            timer = 0f;
-            isFirstCharaTurn = !isFirstCharaTurn;
+            timer += Time.deltaTime;
 
+            if (timer >= timePerDialogue)
+            {
+                if (isFirstCharaTurn)
+                {
+                    ShowBubble();
+                    otherDialogue.HideBubble();
+                }
+                else
+                {
+                    otherDialogue.ShowBubble();
+                    HideBubble();
+                }
+                timer = 0f;
+                isFirstCharaTurn = !isFirstCharaTurn;
+
+            }
         }
     }
 
@@ -64,5 +69,13 @@ public class LinkedDialogue : MonoBehaviour
     public void HideBubble()
     {
         dialogueBubble.transform.DOScale(Vector3.zero, 0.3f);
+    }
+
+
+    public void HideComplitelyBubble()
+    {
+        dialogueBubble.SetActive(false);
+        isDisable = true;
+        otherDialogue.dialogueBubble.SetActive(false);
     }
 }

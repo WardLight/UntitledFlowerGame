@@ -5,13 +5,13 @@ using UnityEngine;
 public class grab : MonoBehaviour
 {
     public KeyCode grabKey;
+    [SerializeField] AudioSource grabSound;
 
     private bool hold;
     private bool holding = false;
     void Update()
     {
         
-
         if (Input.GetKey(grabKey))
         {
             hold = true;
@@ -32,6 +32,8 @@ public class grab : MonoBehaviour
             if (hold && !holding)
             {
                 holding = true;
+                if (grabSound != null)
+                    grabSound.Play();
                 Rigidbody rb = other.transform.GetComponent<Rigidbody>();
                 FixedJoint fj = transform.gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
                 fj.connectedBody = rb;

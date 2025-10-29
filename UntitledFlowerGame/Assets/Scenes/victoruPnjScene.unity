@@ -186,6 +186,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: loveEffect
+      value: 
+      objectReference: {fileID: 8442087788013840462, guid: 26cf5438bef1c534cb070e81956d9674, type: 3}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: collectibleTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: selfDialogueScript
+      value: 
+      objectReference: {fileID: 351460135}
     - target: {fileID: 4022543526801218056, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
       propertyPath: m_Name
       value: PNJ1
@@ -243,6 +255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleTarget: 0
+  loveEffect: {fileID: 0}
+  badEffect: {fileID: 0}
+  selfDialogueScript: {fileID: 0}
+  linkedDialogueScript: {fileID: 0}
+  linkedDialogueInfoScript: {fileID: 0}
 --- !u!1001 &649528108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,11 +366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6447939046642751035, guid: 7fa9e679c52bf30459471c7f87be6091, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -69
+      value: -50.8
       objectReference: {fileID: 0}
     - target: {fileID: 6447939046642751035, guid: 7fa9e679c52bf30459471c7f87be6091, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -214
+      value: -69.1
       objectReference: {fileID: 0}
     - target: {fileID: 6447939046642751035, guid: 7fa9e679c52bf30459471c7f87be6091, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -541,6 +558,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: loveEffect
+      value: 
+      objectReference: {fileID: 8442087788013840462, guid: 26cf5438bef1c534cb070e81956d9674, type: 3}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: linkedDialogueInfoScript
+      value: 
+      objectReference: {fileID: 785828068}
     - target: {fileID: 4022543526801218056, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
       propertyPath: m_Name
       value: PNJ 1 (2)
@@ -599,6 +624,7 @@ MonoBehaviour:
   - 21
   - 22
   - 23
+  mainDialogue: {fileID: 0}
 --- !u!1 &817231522 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 161204806109077908, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
@@ -713,6 +739,7 @@ MonoBehaviour:
   - 12
   - 13
   otherDialogue: {fileID: 785828068}
+  isDisable: 0
 --- !u!1001 &1423855921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1152,6 +1179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934255363}
   - component: {fileID: 1934255362}
+  - component: {fileID: 1934255364}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1236,6 +1264,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1934255364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934255361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!114 &2014577276 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9037403052686521630, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
@@ -1351,6 +1402,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: loveEffect
+      value: 
+      objectReference: {fileID: 8442087788013840462, guid: 26cf5438bef1c534cb070e81956d9674, type: 3}
+    - target: {fileID: 3033573259266076353, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
+      propertyPath: linkedDialogueScript
+      value: 
+      objectReference: {fileID: 1400646436}
     - target: {fileID: 4022543526801218056, guid: 2f116dac22294a44eb37be71437275a6, type: 3}
       propertyPath: m_Name
       value: PNJ 1

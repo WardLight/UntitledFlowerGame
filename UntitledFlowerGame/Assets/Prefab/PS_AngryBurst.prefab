@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2194211267519906845}
   - component: {fileID: 2476865054606747514}
   m_Layer: 0
-  m_Name: PS_LoveBurst
+  m_Name: PS_AngryBurst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1545,13 +1545,12 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 233437041, guid: 99f82e360548a044db8450455f7ca015, type: 3}
-    - sprite: {fileID: -1734314654, guid: 99f82e360548a044db8450455f7ca015, type: 3}
-    - sprite: {fileID: 1283960559, guid: 99f82e360548a044db8450455f7ca015, type: 3}
-    - sprite: {fileID: -1647916695, guid: 99f82e360548a044db8450455f7ca015, type: 3}
-    - sprite: {fileID: -1128698808, guid: 99f82e360548a044db8450455f7ca015, type: 3}
-    - sprite: {fileID: -661533765, guid: 99f82e360548a044db8450455f7ca015, type: 3}
-    - sprite: {fileID: -1038963488, guid: 99f82e360548a044db8450455f7ca015, type: 3}
+    - sprite: {fileID: 1924681954, guid: 4fe437f73efcf3942808897e2f0d3005, type: 3}
+    - sprite: {fileID: 218257992, guid: 4fe437f73efcf3942808897e2f0d3005, type: 3}
+    - sprite: {fileID: -1556488998, guid: 4fe437f73efcf3942808897e2f0d3005, type: 3}
+    - sprite: {fileID: -1069195072, guid: 4fe437f73efcf3942808897e2f0d3005, type: 3}
+    - sprite: {fileID: 1638813512, guid: 4fe437f73efcf3942808897e2f0d3005, type: 3}
+    - sprite: {fileID: -1406952858, guid: 4fe437f73efcf3942808897e2f0d3005, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
