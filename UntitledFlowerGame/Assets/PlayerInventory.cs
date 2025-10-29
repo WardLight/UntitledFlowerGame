@@ -9,12 +9,13 @@ public enum CollectibleType
 {
     Lisianthus,
     Rose,
-    Paquerette
+    Paquerette,
+    Fish
 }
 
 public class PlayerInventory : MonoBehaviour
 {
-    private bool[] Inventory = new []{false, false, false};
+    private bool[] Inventory = new []{false, false, false, false};
     
     [SerializeField] List<GameObject> Items;
     

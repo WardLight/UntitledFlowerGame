@@ -7,7 +7,6 @@ public class InteractableScript : MonoBehaviour
     [SerializeField] AudioSource flowerSuccessAudio;
     [SerializeField] CollectibleType collectibleTarget;
     
-    [SerializeField] CollectibleType collectibleTarget;
     [SerializeField] GameObject loveEffect;
     [SerializeField] GameObject badEffect;
 
