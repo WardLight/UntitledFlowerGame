@@ -7,7 +7,8 @@ public class PlayerScript : MonoBehaviour
     private float playerSpeed = 5.0f;
     private float gravityValue = -9.81f;
 
-    private SphereCollider detectionRange;
+    [SerializeField] private SphereCollider detectionRange;
+    [SerializeField] private ParticleSystem particles;
 
     [Header("Input Actions")]
     public InputAction moveAction;
@@ -15,6 +16,8 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField]
     private Rigidbody rb;
+    [SerializeField]
+    private PlayerInventory playerInventory;
 
     private void Start()
     {
@@ -36,7 +39,7 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (collectAction.WasCompletedThisFrame())
+        if (collectAction.WasPressedThisFrame())
         {
             Collect();
         }
@@ -47,6 +50,21 @@ public class PlayerScript : MonoBehaviour
 
         rb.velocity = new Vector3(move.x * playerSpeed, gravityValue * Time.deltaTime * rb.velocity.y, move.z * playerSpeed);
 
+        if (particles.isPlaying)
+        {
+            if (rb.velocity.magnitude < 0.1f)
+            {
+                particles.Stop();
+            }
+        }
+        else
+        {
+            if (rb.velocity.magnitude > 0.1f)
+            {
+                particles.Play();
+            }
+        }
+        
         RotateTowardsMouse();
     }
 
@@ -75,9 +93,34 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-
     private void Collect()
     {
-        Physics.OverlapSphere(detectionRange.center, detectionRange.radius);
+        foreach (Collider collider in Physics.OverlapSphere(transform.position + detectionRange.center, detectionRange.radius))
+        {
+            if (collider.CompareTag("Collectible"))
+            {
+                CollectibleScript collectible = collider.gameObject.GetComponent<CollectibleScript>();
+
+                playerInventory.AddCollectible(collectible.getCollectibleType());
+
+                collectible.OnCollect();
+            }
+            if (collider.CompareTag("Interactable"))
+            {
+                InteractableScript target = collider.gameObject.GetComponent<InteractableScript>();
+
+                CollectibleType collectible = target.getCollectibleTarget();
+
+                if (playerInventory.ContainsCollectible(collectible))
+                {
+                    playerInventory.RemoveCollectible(collectible);
+                    target.OnQuestComplete();
+                }
+                else
+                {
+                    target.OnQuestFailed();
+                }
+            }
+        }
     }
 }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:UntitledFlowerGame/Assets/Graph/Mesh/Box.fbx.meta
+guid: d1a15dfb669e2ce4b91eee6bd99c0d9c
+========
 guid: d44adb3a6f19c374aab989a8ab17b597
+>>>>>>>> 848ab28587fa9efc1da1e95c3412a14674d9ca55:UntitledFlowerGame/Assets/Graph/Mesh/Arbre.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []

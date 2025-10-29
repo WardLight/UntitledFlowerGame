@@ -7,12 +7,14 @@ using DG.Tweening;
 public class LinkedDialogueInfo : MonoBehaviour
 {
     [SerializeField]
-    private GameObject dialogueBubble;
+    public GameObject dialogueBubble;
     [SerializeField]
     private TextMeshPro dialogueMesh;
     [SerializeField]
     private List<string> dialogues;
 
+    [SerializeField]
+    private LinkedDialogue mainDialogue;
 
     private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
 
@@ -34,5 +36,13 @@ public class LinkedDialogueInfo : MonoBehaviour
     public void HideBubble()
     {
         dialogueBubble.transform.DOScale(Vector3.zero, 0.3f);
+    }
+
+    public void HideComplitelyBubble()
+    {
+        dialogueBubble.SetActive(false);
+
+        mainDialogue.dialogueBubble.SetActive(false);
+        mainDialogue.isDisable = true;
     }
 }

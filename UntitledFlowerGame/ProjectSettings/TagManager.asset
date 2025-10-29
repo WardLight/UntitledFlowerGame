@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flower
+  - Collectible
   - Movable
+  - Interactable
   layers:
   - Default
   - TransparentFX

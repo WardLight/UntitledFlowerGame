@@ -21,6 +21,8 @@ public class SelfDialogue : MonoBehaviour
 
     private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
 
+    private bool isDisable = false;
+
     private void Start()
     {
         dialogueBubble.transform.localScale = Vector3.zero;
@@ -30,20 +32,21 @@ public class SelfDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (isTransitioning) return;
+        if (!isDisable)
+            if (isTransitioning) return;
 
-        timer += Time.deltaTime;
+            timer += Time.deltaTime;
 
-        if (timer >= timePerDialogue)
-        {
-            isTransitioning = true;
-            HideBubble(() =>
+            if (timer >= timePerDialogue)
             {
-                ShowBubble();
-                timer = 0f;
-                isTransitioning = false;
-            });
-        }
+                isTransitioning = true;
+                HideBubble(() =>
+                {
+                    ShowBubble();
+                    timer = 0f;
+                    isTransitioning = false;
+                });
+            }
     }
 
     public void ShowBubble()
@@ -59,5 +62,11 @@ public class SelfDialogue : MonoBehaviour
         {
             onComplete?.Invoke();
         });
+    }
+
+    public void HideComplitelyBubble()
+    {
+        dialogueBubble.SetActive(false);
+        isDisable = true;
     }
 }

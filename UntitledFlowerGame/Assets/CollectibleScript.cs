@@ -1,24 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CollectibleScript : MonoBehaviour
 {
-    [SerializeField] PlayerScript player;
+    [SerializeField] CollectibleType collectibleType;
+
+    public void OnCollect()
+    {
+        Destroy(gameObject);
+    }
     
-    // Start is called before the first frame update
-    void Start()
+    public CollectibleType getCollectibleType()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
+        return collectibleType;
     }
 }
