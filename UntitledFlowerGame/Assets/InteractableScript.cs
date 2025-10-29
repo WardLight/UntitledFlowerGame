@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractableScript : MonoBehaviour
 {
+    [SerializeField] AudioSource flowerSuccessAudio;
+    [SerializeField] CollectibleType collectibleTarget;
     
     [SerializeField] CollectibleType collectibleTarget;
     [SerializeField] GameObject loveEffect;
@@ -33,8 +35,10 @@ public class InteractableScript : MonoBehaviour
         {
             linkedDialogueInfoScript.HideComplitelyBubble();
         }
+        if (flowerSuccessAudio != null)
+            flowerSuccessAudio.Play();
     }
-
+    
     public void OnQuestFailed()
     {
         Debug.Log("Quest failed");
