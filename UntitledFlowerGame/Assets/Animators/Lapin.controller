@@ -10,8 +10,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -1459424130521917876}
-    m_Position: {x: 349.0147, y: 108.907684, z: 0}
+    m_State: {fileID: -4852932187493142444}
+    m_Position: {x: 462.41553, y: 22.590118, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -21,15 +21,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -1459424130521917876}
---- !u!1102 &-1459424130521917876
+  m_DefaultState: {fileID: -4852932187493142444}
+--- !u!1102 &-4852932187493142444
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lapin|Idle
+  m_Name: Lapin|MArche
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -42,7 +42,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 175319774761706293, guid: 4b84d8c57a49a8b4389fe17cca6b31db, type: 3}
+  m_Motion: {fileID: 2752674780331729725, guid: 4b84d8c57a49a8b4389fe17cca6b31db, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
