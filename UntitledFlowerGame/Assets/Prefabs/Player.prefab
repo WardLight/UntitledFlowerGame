@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4eaa6e5ab96084f8f4c6079aaa6374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: {fileID: 0}
+  detectionRange: {fileID: 2429055816022788282}
   moveAction:
     m_Name: Move
     m_Type: 0

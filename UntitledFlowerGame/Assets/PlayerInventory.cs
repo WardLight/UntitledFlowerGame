@@ -30,4 +30,9 @@ public class PlayerInventory : MonoBehaviour
         Inventory[(int)type] = false;
         Items[(int)type].SetActive(false);
     }
+    
+    public bool ContainsCollectible(CollectibleType type)
+    {
+        return Inventory[(int)type];
+    }
 }

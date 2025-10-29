@@ -272,9 +272,10 @@ GameObject:
   - component: {fileID: 6412128281156971903}
   - component: {fileID: 1454127166406270167}
   - component: {fileID: 2343739863659331719}
+  - component: {fileID: 3033573259266076353}
   m_Layer: 0
   m_Name: PNJ1
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,3 +369,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3033573259266076353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022543526801218056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162cc59f97573574f84d3ce6b7ed37e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleTarget: 0

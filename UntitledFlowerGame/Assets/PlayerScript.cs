@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (collectAction.WasCompletedThisFrame())
+        if (collectAction.WasPressedThisFrame())
         {
             Collect();
         }
@@ -78,8 +78,7 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-
- private void Collect()
+    private void Collect()
     {
         foreach (Collider collider in Physics.OverlapSphere(transform.position + detectionRange.center, detectionRange.radius))
         {
@@ -90,6 +89,22 @@ public class PlayerScript : MonoBehaviour
                 playerInventory.AddCollectible(collectible.getCollectibleType());
 
                 collectible.OnCollect();
+            }
+            if (collider.CompareTag("Interactable"))
+            {
+                InteractableScript target = collider.gameObject.GetComponent<InteractableScript>();
+
+                CollectibleType collectible = target.getCollectibleTarget();
+
+                if (playerInventory.ContainsCollectible(collectible))
+                {
+                    playerInventory.RemoveCollectible(collectible);
+                    target.OnQuestComplete();
+                }
+                else
+                {
+                    target.OnQuestFailed();
+                }
             }
         }
     }
