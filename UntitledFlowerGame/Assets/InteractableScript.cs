@@ -6,13 +6,17 @@ public class InteractableScript : MonoBehaviour
 {
     [SerializeField] AudioSource flowerSuccessAudio;
     [SerializeField] CollectibleType collectibleTarget;
-    
+
     [SerializeField] ParticleSystem loveEffect;
     [SerializeField] ParticleSystem badEffect;
 
     [SerializeField] SelfDialogue selfDialogueScript;
     [SerializeField] LinkedDialogue linkedDialogueScript;
     [SerializeField] LinkedDialogueInfo linkedDialogueInfoScript;
+
+
+    [SerializeField] string missionName;
+
     // Start is called before the first frame update
     public CollectibleType getCollectibleTarget()
     {
@@ -21,6 +25,20 @@ public class InteractableScript : MonoBehaviour
 
     public void OnQuestComplete()
     {
+        if (missionName == "LoveMission")
+        {
+            GameManager.LoveMissionComplete = true;
+        }
+        else if (missionName == "SadMission")
+        {
+            GameManager.SadMissionComplete = true;
+        }
+        else if (missionName == "PartyMission")
+        {
+            GameManager.PartyMissionComplete = true;
+        }
+
+
         loveEffect.Play();
         if (selfDialogueScript != null)
         {
